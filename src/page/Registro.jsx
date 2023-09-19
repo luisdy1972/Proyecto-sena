@@ -27,7 +27,7 @@ export default function Registro() {
 
 	return (
 		// Joy UI
-		<form>
+		<>
 			<Input
 				placeholder="Nombre*"
 				sx={{ borderRadius: '15px', minMidth: '16rem' }}
@@ -87,6 +87,6 @@ export default function Registro() {
 					<div className="button-navegacion">{'Siguiente>>'}</div>
 				</Link>
 			</div>
-		</form>
+		</>
 	)
 }
