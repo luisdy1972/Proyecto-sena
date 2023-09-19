@@ -26,95 +26,11 @@ export default function Registro() {
 	}
 
 	return (
-		// material UI component
-		// <>
-		// 	{/* <TextField
-		// 		sx={{ width: '17rem', borderRadius: '50%' }}
-		// 		size="small"
-		// 		label="Nombre"
-		// 		id="nombre-user"
-		// 		variant="filled"
-		// 		required
-		// 	/>
-		// 	<TextField
-		// 		className="input-text"
-		// 		size="small"
-		// 		label="Apellido"
-		// 		id="Apellido-user"
-		// 		variant="filled"
-		// 		required
-		// 	/>
-		// 	<FormControl variant="filled">
-		// 		<InputLabel>Tipo de Documento</InputLabel>
-		// 		<Select
-		// 			className="input-text"
-		// 			size="small"
-		// 			variant="filled"
-		// 			labelId="demo-simple-select-standard-label"
-		// 			id="demo-simple-select-standard"
-		// 			value={tipoDoc}
-		// 			onChange={handleChange}
-		// 			required
-		// 		>
-		// 			<MenuItem value={'Ti'}>Tarjeta de identidad</MenuItem>
-		// 			<MenuItem value={'Cc'}>Cédula de ciudadanía</MenuItem>
-		// 			<MenuItem value={'Pa'}>Pasaporte</MenuItem>
-		// 		</Select>
-		// 	</FormControl>
-
-		// 	<TextField
-		// 		className="input-text"
-		// 		size="small"
-		// 		label="Número de documento"
-		// 		id="documento-user"
-		// 		variant="filled"
-		// 		required
-		// 	/>
-		// 	<TextField
-		// 		type="email"
-		// 		className="input-text"
-		// 		size="small"
-		// 		label="Correo institucional"
-		// 		id="correo-misena-user"
-		// 		variant="filled"
-		// 		required
-		// 	/>
-		// 	<TextField
-		// 		type="email"
-		// 		className="input-text"
-		// 		size="small"
-		// 		label="Correo personal"
-		// 		id="correo-personal-user"
-		// 		variant="filled"
-		// 		required
-		// 	/>
-		// 	<TextField
-		// 		type="date"
-		// 		className="input-text"
-		// 		id="fehca nacimiento"
-		// 		variant="filled"
-		// 		required
-		// 	/>
-
-		// 	<div className="navegacion ">
-		// 		<Link to="/">
-		// 			<Button>
-		// 				<div className="button-navegacion">{'<<Atrás'}</div>
-		// 			</Button>
-		// 		</Link>
-		// 		<Link to="2">
-		// 			<Button>
-		// 				<div className="button-navegacion">{'Siguiente>>'}</div>
-		// 			</Button>
-		// 		</Link>
-		// 	</div> */}
-		// </>
-
 		// Joy UI
-		<>
+		<form>
 			<Input
 				placeholder="Nombre*"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', minMidth: '16rem' }}
 				variant="soft"
 				required
 			/>
@@ -171,6 +87,6 @@ export default function Registro() {
 					<div className="button-navegacion">{'Siguiente>>'}</div>
 				</Link>
 			</div>
-		</>
+		</form>
 	)
 }
