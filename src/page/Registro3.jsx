@@ -1,5 +1,6 @@
 import { Select, Option, Checkbox, Button } from '@mui/joy'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Registro3() {
 	function handleChange(event, newValue) {
@@ -51,6 +52,9 @@ export default function Registro3() {
 			<Button sx={{ minWidth: '12rem', borderRadius: '15px' }}>
 				Registrar
 			</Button>
+			<Link to="/registro/2">
+				<div className="">{'Atrás'}</div>
+			</Link>
 		</>
 	)
 }

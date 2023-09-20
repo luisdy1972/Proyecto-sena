@@ -24,12 +24,14 @@ export default function Registro() {
 	function handleChange(event, newValue) {
 		console.log(`Cambiaste a "${newValue}"`)
 	}
+	let nombre
 
 	return (
 		// Joy UI
 		<>
 			<Input
 				placeholder="Nombre*"
+				value={nombre}
 				sx={{ borderRadius: '15px', minWidth: '16rem' }}
 				variant="soft"
 				required
