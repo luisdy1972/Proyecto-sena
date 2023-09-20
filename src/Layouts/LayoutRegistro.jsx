@@ -4,7 +4,7 @@ import '../page/styles/registro.css'
 
 export default function () {
 	return (
-		<form>
+		<>
 			<div className="caja-azul">
 				<div className="caja-blanca">
 					<div className="formulario">
@@ -18,6 +18,6 @@ export default function () {
 					alt="aprendiz sena"
 				/>
 			</div>
-		</form>
+		</>
 	)
 }

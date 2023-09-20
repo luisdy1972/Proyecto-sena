@@ -7,12 +7,30 @@ h2 {
   border-bottom: rgba(0, 0, 0, 0.39) solid 0.5px;
 }
 
-
-
 .caja-azul {
   display: flex;
   background-color: #004AAD;
   min-height: 100vh;
+}
+
+.caja-azul2 {
+  min-height: 30%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  border-radius: 100px 100px 0px 0px;
+  background-color: #004AAD;
+  min-width: 50%;
+}
+
+.caja-blanca2 {
+  margin-top: 5rem;
+  width: 50%;
+  background-color: #FFF;
+  border-radius: 0px 400px 0px 400px;
 }
 
 .caja-blanca {
@@ -27,52 +45,12 @@ h2 {
 
 }
 
-
-@media (max-width: 768px) {
-
-  /* Ocultar la imagen de registro en dispositivos móviles */
-  .img-registro {
-    display: none;
-  }
-
-  .caja-blanca {
-    width: 100%;
-    /* border-radius: 0; */
-    border-radius: 0px 300px 0px 300px;
-  }
-}
-
 .formulario {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
-
-}
-
-.formulario2 {
-  min-height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.formulario3 {
-  min-height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
 }
 
@@ -101,34 +79,14 @@ h2 {
   min-height: 100vh;
 }
 
-.caja1 {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.formulario-registro3 {
-  min-height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
 
 .Botonregistrar {
   background-color: #004AAD;
   color: white;
-  /* Color del texto */
   border: none;
-  /* Elimina el borde del botón */
   padding: 10px 50px;
-  /* Ajusta el espaciado interno del botón */
   font-size: 16px;
-  /* Tamaño de fuente */
   border-radius: 16px;
-  /* Bordes redondeados */
   cursor: pointer;
   margin: 2rem;
   font-weight: bold;
@@ -146,21 +104,6 @@ h2 {
   margin: 2rem;
 }
 
-
-.caja-azul2 {
-  min-height: 30%;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  left: 0;
-  border-radius: 100px 100px 0px 0px;
-  background-color: #004AAD;
-  min-width: 50%;
-}
-
-
 .img-bienestar {
   width: 11rem;
 }
@@ -170,7 +113,32 @@ h2 {
     display: none;
   }
 
+  .caja-blanca {
+    width: 100%;
+
+    border-radius: 0px 290px 0px 290px;
+  }
+
+  .caja-blanca2 {
+    margin-top: 5rem;
+    width: 100%;
+  }
+
+
+  .img-registro {
+    display: none;
+  }
+
   .caja-azul2 {
     min-width: 100%
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
   }
 }

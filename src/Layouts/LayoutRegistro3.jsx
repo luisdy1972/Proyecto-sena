@@ -8,7 +8,7 @@ export default function () {
 	return (
 		<>
 			<div className="principal">
-				<div className="caja1">
+				<div className="caja-blanca2">
 					<div className="formulario">
 						<Outlet></Outlet>
 					</div>
