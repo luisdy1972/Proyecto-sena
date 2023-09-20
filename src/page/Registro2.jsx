@@ -1,15 +1,19 @@
 // React
-import React from 'react'
+import { React, useState } from 'react'
+
+// Joy ui
 import { Input, Option, Select, Autocomplete, Button } from '@mui/joy'
-// Ruta
+
+// iconos
 import VisibilityIcon from '@mui/icons-material/Visibility'
+
 import { Link } from 'react-router-dom'
 
 export default function Registro2() {
 	function handleChange(event, newValue) {
 		console.log(`Cambiaste a "${newValue}"`)
 	}
-	const [value, setValue] = React.useState('')
+	const [value, setValue] = useState('')
 	const minLength = 12
 	const Fichas = [
 		{ label: '1994 The Shawshank Redemption', Ficha: 1994 },
@@ -25,9 +29,9 @@ export default function Registro2() {
 			<Select
 				sx={{ borderRadius: '15px', minWidth: '16rem' }}
 				variant="soft"
-				required
 				defaultValue=""
 				onChange={handleChange}
+				required
 			>
 				<Option value="">Rol *</Option>
 				<Option value="Aprendiz">Aprendiz</Option>
@@ -37,18 +41,53 @@ export default function Registro2() {
 
 			<Input
 				type="password"
+				placeholder="Contraseña*"
 				endDecorator={<VisibilityIcon />}
-				placeholder="Contraseña"
-				value={''}
+				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				variant="soft"
+				required
 			/>
-
-			<Input type="password" placeholder="Confirma contraseña" value={''} />
-
+			<Input
+				type="password"
+				placeholder="Confirmar Contraseña*"
+				endDecorator={<VisibilityIcon />}
+				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				variant="soft"
+				required
+			/>
 			<Autocomplete
-				placeholder="Número de ficha"
+				placeholder="Número de ficha*"
 				options={Fichas}
-				sx={{ width: '16rem' }}
+				variant="soft"
+				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				required
 			/>
+			<Input
+				placeholder="Ciudad*"
+				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				variant="soft"
+				required
+			/>
+			<Input
+				placeholder="Barrio*"
+				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				variant="soft"
+				required
+			/>
+			<Input
+				placeholder="Dirección*"
+				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				variant="soft"
+				required
+			/>
+			<div className="navegacion ">
+				<Link to="/registro/1">
+					<div className="button-navegacion">{'<<Atrás'}</div>
+				</Link>
+				<Link to="/registro/3">
+					<div className="button-navegacion">{'Siguiente>>'}</div>
+				</Link>
+			</div>
 		</>
 	)
 }

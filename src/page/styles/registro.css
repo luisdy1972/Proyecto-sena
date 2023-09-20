@@ -46,7 +46,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 
 }
 
@@ -102,7 +102,7 @@ h2 {
 }
 
 .caja1 {
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 
@@ -148,17 +148,29 @@ h2 {
 
 
 .caja-azul2 {
-  min-height: 29.1%;
-  min-width: none;
-  align-items: center;
+  min-height: 30%;
+  position: fixed;
   display: flex;
+  align-items: center;
   justify-content: center;
+  bottom: 0;
+  left: 0;
   border-radius: 100px 100px 0px 0px;
   background-color: #004AAD;
-
+  min-width: 50%;
 }
 
 
 .img-bienestar {
   width: 11rem;
+}
+
+@media (max-width: 768px) {
+  .img-registro {
+    display: none;
+  }
+
+  .caja-azul2 {
+    min-width: 100%
+  }
 }

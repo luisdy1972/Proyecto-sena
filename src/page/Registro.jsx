@@ -30,7 +30,7 @@ export default function Registro() {
 		<>
 			<Input
 				placeholder="Nombre*"
-				sx={{ borderRadius: '15px', minMidth: '16rem' }}
+				sx={{ borderRadius: '15px', minWidth: '16rem' }}
 				variant="soft"
 				required
 			/>
@@ -71,10 +71,10 @@ export default function Registro() {
 				required
 			/>
 			<div style={{ display: 'block' }}>
-				<div style={{ textAlign: 'center' }}>Fecha de nacimiento</div>
+				<div style={{ textAlign: 'center' }}>Fecha de nacimiento*</div>
 				<Input
 					type="date"
-					sx={{ borderRadius: '15px' }}
+					sx={{ borderRadius: '15px', minWidth: '16rem' }}
 					variant="soft"
 					required
 				/>
