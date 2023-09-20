@@ -3,13 +3,13 @@ import { Input, Option, Select } from '@mui/joy'
 import { Link } from 'react-router-dom'
 
 export default function Registro() {
-	let [nombre, setNombre] = useState('')
-	let [apellido, setApellido] = useState('')
-	let [tDocumento, setTDocumento] = useState('')
-	let [documento, setDocumento] = useState('')
-	let [correoSena, setCorreoSena] = useState('')
-	let [correo, setCorreo] = useState('')
-	let [fechaNacimiento, setFechaNacimiento] = useState('')
+	const [nombre, setNombre] = useState('')
+	const [apellido, setApellido] = useState('')
+	const [tDocumento, setTDocumento] = useState('')
+	const [documento, setDocumento] = useState('')
+	const [correoSena, setCorreoSena] = useState('')
+	const [correo, setCorreo] = useState('')
+	const [fechaNacimiento, setFechaNacimiento] = useState('')
 
 	function handleChangeNombre(e) {
 		setNombre(e.target.value)
@@ -108,7 +108,6 @@ export default function Registro() {
 				placeholder="Correo Personal"
 				sx={{ borderRadius: '15px', minWidth: '16rem' }}
 				variant="soft"
-				required
 			/>
 			<div style={{ display: 'block' }}>
 				<div style={{ textAlign: 'center' }}>Fecha de nacimiento*</div>
@@ -123,17 +122,22 @@ export default function Registro() {
 			</div>
 			<div className="navegacion">
 				<Link to="/">
-					<button className="button-navegacion">{'<<Atrás'}</button>
+					<a className="button-navegacion">{'<<Atrás'}</a>
 				</Link>
 
-				{nombre == '' ? (
-					<Link to="/registro/2">
-						<div onClick={handleSiguiente} className="button-navegacion">
-							{'Siguiente>>'}
-						</div>
-					</Link>
-				) : (
+				{nombre == '' ||
+				apellido == '' ||
+				tDocumento == '' ||
+				documento == '' ||
+				correoSena == '' ||
+				fechaNacimiento == '' ? (
 					<button className="button-navegacion">{'Siguiente>>'}</button>
+				) : (
+					<Link to="/registro/2">
+						<a onClick={handleSiguiente} className="button-navegacion">
+							{'Siguiente>>'}
+						</a>
+					</Link>
 				)}
 			</div>
 		</>
