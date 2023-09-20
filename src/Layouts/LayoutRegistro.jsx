@@ -5,10 +5,10 @@ import '../page/styles/registro.css'
 export default function () {
 	return (
 		<>
-			<div className="caja-azul">
+			<form autocomplete="off" onSubmit={false} className="caja-azul">
 				<div className="caja-blanca">
+					<h2>REGISTRATE</h2>
 					<div className="formulario">
-						<h2>REGISTRATE</h2>
 						<Outlet></Outlet>
 					</div>
 				</div>
@@ -17,7 +17,7 @@ export default function () {
 					src="/img/mujerGorra.jpg"
 					alt="aprendiz sena"
 				/>
-			</div>
+			</form>
 		</>
 	)
 }

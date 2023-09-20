@@ -7,7 +7,7 @@ import '../page/styles/registro.css'
 export default function () {
 	return (
 		<>
-			<div className="principal">
+			<form autocomplete="off" className="principal">
 				<div className="caja-blanca2">
 					<div className="formulario">
 						<Outlet></Outlet>
@@ -30,7 +30,7 @@ export default function () {
 					src="/img/Bienvenida.jpg"
 					alt="aprendiz sena"
 				/>
-			</div>
+			</form>
 		</>
 	)
 }

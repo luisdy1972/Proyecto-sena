@@ -45,7 +45,7 @@ export default function Registro3() {
 				<Option value="">Eps*</Option>
 				<Option value="...">...</Option>
 			</Select>
-			<div className="politicaps ">
+			<div>
 				<Checkbox variant="soft" />
 				<a> Acepto las politicas de privacidad y seguridad</a>
 			</div>

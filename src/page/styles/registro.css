@@ -1,5 +1,6 @@
 h2 {
   font-size: 3.5rem;
+  text-align: center;
 }
 
 .campo-ficha {
@@ -64,13 +65,19 @@ h2 {
 }
 
 .button-navegacion {
-  font-weight: 700;
-  text-decoration: underline;
-  background-color: transparent;
-  margin: 10px;
   color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: 700;
   min-width: none;
+  border: 0;
+  margin: 10px;
+  cursor: pointer;
 
+}
+
+.button-navegacion:active {
+  color: #004AAD;
 }
 
 .principal {
@@ -78,7 +85,6 @@ h2 {
   justify-content: space-between;
   min-height: 100vh;
 }
-
 
 .Botonregistrar {
   background-color: #004AAD;
@@ -100,10 +106,6 @@ h2 {
   background-color: #004AAD;
 }
 
-.politicaps {
-  margin: 2rem;
-}
-
 .img-bienestar {
   width: 11rem;
 }
@@ -123,7 +125,6 @@ h2 {
     margin-top: 5rem;
     width: 100%;
   }
-
 
   .img-registro {
     display: none;
