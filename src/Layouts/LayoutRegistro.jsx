@@ -5,7 +5,7 @@ import '../page/styles/registro.css'
 export default function () {
 	return (
 		<>
-			<form autocomplete="off" onSubmit={false} className="caja-azul">
+			<form className="caja-azul">
 				<div className="caja-blanca">
 					<h2>REGISTRATE</h2>
 					<div className="formulario">

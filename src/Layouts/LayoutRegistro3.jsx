@@ -7,7 +7,7 @@ import '../page/styles/registro.css'
 export default function () {
 	return (
 		<>
-			<form autocomplete="off" className="principal">
+			<form className="principal">
 				<div className="caja-blanca2">
 					<div className="formulario">
 						<Outlet></Outlet>

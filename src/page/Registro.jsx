@@ -2,28 +2,29 @@ import React, { useState } from 'react'
 import { Input, Option, Select } from '@mui/joy'
 import { Link } from 'react-router-dom'
 
+import { datosRegistro } from '../consultas/Datos'
+
 export default function Registro() {
-	const [nombre, setNombre] = useState('')
-	const [apellido, setApellido] = useState('')
-	const [tDocumento, setTDocumento] = useState('')
-	const [documento, setDocumento] = useState('')
-	const [correoSena, setCorreoSena] = useState('')
-	const [correo, setCorreo] = useState('')
-	const [fechaNacimiento, setFechaNacimiento] = useState('')
+	let [nombre, setNombre] = useState(datosRegistro.nombre)
+	let [apellido, setApellido] = useState(datosRegistro.apellido)
+	let [tDocumento, setTDocumento] = useState(datosRegistro.tDocumento)
+	let [documento, setDocumento] = useState(datosRegistro.documento)
+	let [correoSena, setCorreoSena] = useState(datosRegistro.correoSena)
+	let [correo, setCorreo] = useState(datosRegistro.correo)
+	let [fechaNacimiento, setFechaNacimiento] = useState(
+		datosRegistro.fechaNacimiento
+	)
 
 	function handleChangeNombre(e) {
 		setNombre(e.target.value)
-		// console.log(nombre)
 	}
 
 	function handleChangeApellido(e) {
 		setApellido(e.target.value)
-		// console.log(apellido)
 	}
 
 	function handleChangeTDocumento(e, newValue) {
 		setTDocumento(newValue)
-		// console.log(tDocumento)
 	}
 
 	function handleChangeNumeroDoc(e) {
@@ -42,17 +43,21 @@ export default function Registro() {
 
 	function handlechangeFechaNacimiento(e) {
 		setFechaNacimiento(e.target.value)
-		console.log(fechaNacimiento)
+	}
+
+	function mantenerDatos() {
+		datosRegistro.nombre = nombre
+		datosRegistro.apellido = apellido
+		datosRegistro.tDocumento = tDocumento
+		datosRegistro.documento = documento
+		datosRegistro.correoSena = correoSena
+		datosRegistro.correo = correo
+		datosRegistro.fechaNacimiento = fechaNacimiento
 	}
 
 	function handleSiguiente() {
-		console.log(nombre)
-		console.log(apellido)
-		console.log(tDocumento)
-		console.log(documento)
-		console.log(correoSena)
-		console.log(correo)
-		console.log(fechaNacimiento)
+		mantenerDatos()
+		console.log(datosRegistro)
 	}
 
 	return (
@@ -82,7 +87,7 @@ export default function Registro() {
 				onChange={handleChangeTDocumento}
 			>
 				<Option value="">Tipo de documento*</Option>
-				<Option value="Ti">Ti</Option>
+				<Option value="T.I">Ti</Option>
 				<Option value="Cc">Cc</Option>
 				<Option value="Pa">Pa</Option>
 			</Select>
@@ -122,7 +127,9 @@ export default function Registro() {
 			</div>
 			<div className="navegacion">
 				<Link to="/">
-					<a className="button-navegacion">{'<<Atrás'}</a>
+					<button onClick={mantenerDatos} className="button-navegacion">
+						{'<<Atrás'}
+					</button>
 				</Link>
 
 				{nombre == '' ||
@@ -131,12 +138,14 @@ export default function Registro() {
 				documento == '' ||
 				correoSena == '' ||
 				fechaNacimiento == '' ? (
-					<button className="button-navegacion">{'Siguiente>>'}</button>
+					<button onClick={mantenerDatos} className="button-navegacion">
+						{'Siguiente>>'}
+					</button>
 				) : (
 					<Link to="/registro/2">
-						<a onClick={handleSiguiente} className="button-navegacion">
+						<div onClick={handleSiguiente} className="button-navegacion">
 							{'Siguiente>>'}
-						</a>
+						</div>
 					</Link>
 				)}
 			</div>
