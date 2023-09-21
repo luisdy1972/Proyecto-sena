@@ -1,20 +1,25 @@
 // React
-import { React, useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 // Joy ui
-import { Input, Option, Select, Autocomplete, Button } from '@mui/joy'
+import { Input, Option, Select, Autocomplete } from '@mui/joy'
 
 // iconos
 import VisibilityIcon from '@mui/icons-material/Visibility'
 
-import { Link } from 'react-router-dom'
+import { datosRegistro } from '../consultas/Datos'
 
 export default function Registro2() {
-	function handleChange(event, newValue) {
-		console.log(`Cambiaste a "${newValue}"`)
-	}
-	const [value, setValue] = useState('')
-	const minLength = 12
+	const roles = JSON.parse(localStorage.getItem('roles'))
+	const listRoles = roles.map((rol) => (
+		<Option key={rol._id} value={rol._id}>
+			{rol.nombre}
+		</Option>
+	))
+
+	let [fichas, setFichas] = useState(datosRegistro.fichas)
+
 	const Fichas = [
 		{ label: '1994 The Shawshank Redemption', Ficha: 1994 },
 		{ label: 'The Godfather', Ficha: 1972 },
@@ -24,19 +29,21 @@ export default function Registro2() {
 		{ label: "Schindler's List", Ficha: 1993 },
 		{ label: 'Pulp Fiction', Ficha: 1994 },
 	]
+	function handleChangeRol(event, newValue) {
+		console.log(`Rol: "${newValue}"`)
+	}
+
 	return (
 		<>
 			<Select
 				sx={{ borderRadius: '15px', minWidth: '16rem' }}
 				variant="soft"
 				defaultValue=""
-				onChange={handleChange}
+				onChange={handleChangeRol}
 				required
 			>
 				<Option value="">Rol *</Option>
-				<Option value="Aprendiz">Aprendiz</Option>
-				<Option value="Instr">Instructor</Option>
-				<Option value="Admin">Administrador</Option>
+				{listRoles}
 			</Select>
 
 			<Input

@@ -36,6 +36,7 @@ export default function Registro() {
 		setCorreoSena(e.target.value)
 		// console.log(correoSena)
 	}
+
 	function handleChangeCorreo(e) {
 		setCorreo(e.target.value)
 		// console.log(correo)
