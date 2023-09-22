@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // Joy ui
-import { Input, Option, Select, Autocomplete, TextField } from '@mui/joy'
+import { Input, Option, Select, Autocomplete } from '@mui/joy'
 
-// iconos
-import VisibilityIcon from '@mui/icons-material/Visibility'
+import VisibilityIcon from '@mui/icons-material/Visibility' // iconos
 
 import { datosRegistro } from '../consultas/Datos'
 
@@ -19,11 +18,13 @@ export default function Registro2() {
 	const [contrasena2, setContrasena2] = useState('')
 	const [ficha, setFicha] = useState(datosRegistro.ficha)
 	const [telefono, setTelefono] = useState(datosRegistro.telefono)
-	// const [barrio, setBarrio] = useState(datosRegistro.barrio)
 	const [direccion, setDireccion] = useState(datosRegistro.direccion)
 
-	function handleChangeRol(_event, newValue) {
+	let contrasIguales
+
+	function handleChangeRol(event, newValue) {
 		setRol(newValue)
+		console.log(newValue)
 	}
 	function handleChangeContrasena(event) {
 		setContrasena(event.target.value)
@@ -31,9 +32,12 @@ export default function Registro2() {
 	function handleChangeContrasena2(event) {
 		setContrasena2(event.target.value)
 	}
-	function handleChangeFicha(_event, newValue) {
+
+	function handleChangeFicha(event, newValue) {
 		setFicha(newValue)
+		console.log(newValue)
 	}
+
 	function handleChangeTelefono(event) {
 		setTelefono(event.target.value)
 	}
@@ -43,15 +47,38 @@ export default function Registro2() {
 	// function handleChangeBarrio(event) {
 	// 	setBarrio(event.target.value)
 	// }
-	function mantenerDatos() {
-		console.log('ficha ::', ficha)
-		console.log('rol', rol)
-	}
+
 	const listRoles = roles.map((rol) => (
 		<Option key={rol._id} value={rol._id}>
 			{rol.nombre}
 		</Option>
 	))
+
+	function compararContraseña() {
+		if (contrasena != '' && contrasena2 != '' && contrasena == contrasena2) {
+			console.log('sonIguales')
+			contrasIguales = true
+		} else {
+			console.log('NO IGUAL')
+
+			contrasIguales = false
+		}
+	}
+
+	function guardarDatos() {
+		datosRegistro.rol = rol
+		datosRegistro.contrasena = contrasena
+		datosRegistro.ficha = ficha
+		datosRegistro.telefono = telefono
+		datosRegistro.direccion = direccion
+		console.log(datosRegistro)
+	}
+
+	useEffect(() => {
+		console.clear()
+		compararContraseña()
+		guardarDatos()
+	}, [rol, contrasena, contrasena2, ficha, telefono, direccion])
 
 	return (
 		<>
@@ -62,12 +89,13 @@ export default function Registro2() {
 				onChange={handleChangeRol}
 				required
 			>
-				<Option value="">Rol *</Option>
+				<Option key=" " value="">
+					Rol *
+				</Option>
 				{listRoles}
 			</Select>
 
 			<Input
-				defaultValue={contrasena}
 				onChange={handleChangeContrasena}
 				type="password"
 				placeholder="Contraseña*"
@@ -77,8 +105,8 @@ export default function Registro2() {
 				required
 			/>
 			<Input
+				// value={contrasena2}
 				onChange={handleChangeContrasena2}
-				defaultValue={contrasena2}
 				type="password"
 				placeholder="Confirmar Contraseña*"
 				endDecorator={<VisibilityIcon />}
@@ -121,23 +149,20 @@ export default function Registro2() {
 			/> */}
 			<div className="navegacion ">
 				<Link to="/registro/1">
-					<div onClick={mantenerDatos} className="button-navegacion">
-						{'<<Atrás'}
-					</div>
+					<div className="button-navegacion">{'<<Atrás'}</div>
 				</Link>
+
 				{rol == '' ||
 				contrasena == '' ||
+				contrasena2 == '' ||
+				contrasIguales == false ||
 				ficha == '' ||
 				telefono == '' ||
 				direccion == '' ? (
-					<button onClick={mantenerDatos} className="button-navegacion">
-						{'♥'}
-					</button>
+					<button className="button-navegacion">{'boton'}</button>
 				) : (
 					<Link to="/registro/3">
-						<div onClick={mantenerDatos} className="button-navegacion">
-							{'Siguiente>>'}
-						</div>
+						<div className="button-navegacion">{'Siguiente>>'}</div>
 					</Link>
 				)}
 			</div>
