@@ -9,7 +9,7 @@ export default function Registro3() {
 	return (
 		<>
 			<Select
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 				defaultValue=""
@@ -24,7 +24,7 @@ export default function Registro3() {
 				<Option value="AB-">AB-</Option>
 			</Select>
 			<Select
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 				defaultValue=""
@@ -36,7 +36,7 @@ export default function Registro3() {
 				<Option value="O">Otros</Option>
 			</Select>
 			<Select
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 				defaultValue=""
@@ -47,11 +47,9 @@ export default function Registro3() {
 			</Select>
 			<div>
 				<Checkbox variant="soft" />
-				<a> Acepto las politicas de privacidad y seguridad</a>
+				<text> Acepto las politicas de privacidad y seguridad</text>
 			</div>
-			<Button sx={{ minWidth: '12rem', borderRadius: '15px' }}>
-				Registrar
-			</Button>
+			<Button sx={{ borderRadius: '15px', margin: '0 30%' }}>Registrar</Button>
 			<Link to="/registro/2">
 				<div className="">{'Atrás'}</div>
 			</Link>
