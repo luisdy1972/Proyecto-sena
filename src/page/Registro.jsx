@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom'
 import { datosRegistro } from '../consultas/Datos'
 
 export default function Registro() {
-	let [nombre, setNombre] = useState(datosRegistro.nombre)
-	let [apellido, setApellido] = useState(datosRegistro.apellido)
-	let [tDocumento, setTDocumento] = useState(datosRegistro.tDocumento)
-	let [documento, setDocumento] = useState(datosRegistro.documento)
-	let [correoSena, setCorreoSena] = useState(datosRegistro.correoSena)
-	let [correo, setCorreo] = useState(datosRegistro.correo)
-	let [fechaNacimiento, setFechaNacimiento] = useState(
-		datosRegistro.fechaNacimiento
-	)
+	let [nombre, setNombre] = useState(datosRegistro.nombres)
+	let [apellido, setApellido] = useState(datosRegistro.apellidos)
+	let [tDocumento, setTDocumento] = useState(datosRegistro.tipo_doc)
+	let [documento, setDocumento] = useState(datosRegistro.n_doc)
+	let [correoSena, setCorreoSena] = useState(datosRegistro.correo_inst)
+	let [correo, setCorreo] = useState(datosRegistro.correo_pers)
+	let [fechaNacimiento, setFechaNacimiento] = useState(datosRegistro.nacimiento)
 
 	function handleChangeNombre(e) {
 		setNombre(e.target.value)
@@ -47,18 +45,13 @@ export default function Registro() {
 	}
 
 	function mantenerDatos() {
-		datosRegistro.nombre = nombre
-		datosRegistro.apellido = apellido
-		datosRegistro.tDocumento = tDocumento
-		datosRegistro.documento = documento
-		datosRegistro.correoSena = correoSena
-		datosRegistro.correo = correo
-		datosRegistro.fechaNacimiento = fechaNacimiento
-	}
-
-	function handleSiguiente() {
-		mantenerDatos()
-		console.log(datosRegistro)
+		datosRegistro.nombres = nombre
+		datosRegistro.apellidos = apellido
+		datosRegistro.tipo_doc = tDocumento
+		datosRegistro.n_doc = documento
+		datosRegistro.correo_inst = correoSena
+		datosRegistro.correo_pers = correo
+		datosRegistro.nacimiento = fechaNacimiento
 	}
 
 	return (
@@ -144,7 +137,7 @@ export default function Registro() {
 					</button>
 				) : (
 					<Link to="/registro/2">
-						<div onClick={handleSiguiente} className="button-navegacion">
+						<div onClick={mantenerDatos} className="button-navegacion">
 							{'Siguiente>>'}
 						</div>
 					</Link>

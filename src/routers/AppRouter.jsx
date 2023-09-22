@@ -17,7 +17,7 @@ function AppRouter() {
 	return (
 		<Routes>
 			<Route path="/" element={<Home />}></Route>
-			<Route path="registro" element={<LayoutRegistro />}>
+			<Route path="/registro" element={<LayoutRegistro />}>
 				<Route path="1" element={<Registro />}></Route>
 				<Route path="2" element={<Registro2 />}></Route>
 			</Route>
