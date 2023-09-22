@@ -71,7 +71,7 @@ export default function Registro2() {
 		datosRegistro.ficha = ficha
 		datosRegistro.telefono = telefono
 		datosRegistro.direccion = direccion
-		console.log(datosRegistro)
+		// console.log(datosRegistro)
 	}
 
 	useEffect(() => {
@@ -84,7 +84,7 @@ export default function Registro2() {
 		<>
 			<Select
 				defaultValue={rol}
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				onChange={handleChangeRol}
 				required
@@ -100,7 +100,7 @@ export default function Registro2() {
 				type="password"
 				placeholder="Contraseña*"
 				endDecorator={<VisibilityIcon />}
-				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
@@ -110,7 +110,7 @@ export default function Registro2() {
 				type="password"
 				placeholder="Confirmar Contraseña*"
 				endDecorator={<VisibilityIcon />}
-				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
@@ -120,14 +120,14 @@ export default function Registro2() {
 				getOptionLabel={(fichas) => fichas.codigo}
 				placeholder="Número de ficha*"
 				variant="soft"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				required
 			/>
 			<Input
 				value={telefono}
 				onChange={handleChangeTelefono}
 				placeholder="Telefono*"
-				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
@@ -135,23 +135,14 @@ export default function Registro2() {
 				value={direccion}
 				onChange={handleChangeDireccion}
 				placeholder="Dirección*"
-				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
-			{/* <Input
-				value={barrio}
-				onChange={handleChangeBarrio}
-				placeholder="Barrio*"
-				sx={{ borderRadius: '15px', maxWidth: '16rem' }}
-				variant="soft"
-				required
-			/> */}
 			<div className="navegacion ">
 				<Link to="/registro/1">
-					<div className="button-navegacion">{'<<Atrás'}</div>
+					<div className="button-navegacion">{'Atrás'}</div>
 				</Link>
-
 				{rol == '' ||
 				contrasena == '' ||
 				contrasena2 == '' ||
@@ -159,10 +150,10 @@ export default function Registro2() {
 				ficha == '' ||
 				telefono == '' ||
 				direccion == '' ? (
-					<button className="button-navegacion">{'boton'}</button>
+					<button className="button-navegacion">{'Siguiente'}</button>
 				) : (
 					<Link to="/registro/3">
-						<div className="button-navegacion">{'Siguiente>>'}</div>
+						<div className="button-navegacion">{'Siguiente'}</div>
 					</Link>
 				)}
 			</div>

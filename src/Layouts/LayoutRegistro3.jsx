@@ -1,12 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-// css
 import '../page/styles/registro.css'
 
 export default function () {
 	return (
 		<form className="principal">
+			<img
+				className="img-registro"
+				src="/img/Bienvenida.jpg"
+				alt="aprendiz sena"
+			/>
 			<div className="caja-blanca2">
 				<div className="formulario">
 					<Outlet></Outlet>
@@ -24,11 +28,6 @@ export default function () {
 					/>
 				</div>
 			</div>
-			<img
-				className="img-registro"
-				src="/img/Bienvenida.jpg"
-				alt="aprendiz sena"
-			/>
 		</form>
 	)
 }

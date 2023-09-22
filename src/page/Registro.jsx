@@ -55,12 +55,13 @@ export default function Registro() {
 	}
 
 	return (
+		// formulario
 		<>
 			<Input
 				value={nombre}
 				onChange={handleChangeNombre}
 				placeholder="Nombre*"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
@@ -68,12 +69,12 @@ export default function Registro() {
 				value={apellido}
 				onChange={handleChangeApellido}
 				placeholder="Apellido*"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
 			<Select
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 				defaultValue=""
@@ -89,7 +90,7 @@ export default function Registro() {
 				value={documento}
 				onChange={handleChangeNumeroDoc}
 				placeholder="Número de documento*"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
@@ -97,7 +98,7 @@ export default function Registro() {
 				value={correoSena}
 				onChange={handleChangeCorreoSena}
 				placeholder="Correo institucional*"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
@@ -105,7 +106,7 @@ export default function Registro() {
 				value={correo}
 				onChange={handleChangeCorreo}
 				placeholder="Correo Personal"
-				sx={{ borderRadius: '15px', minWidth: '16rem' }}
+				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 			/>
 			<div style={{ display: 'block' }}>
@@ -114,16 +115,14 @@ export default function Registro() {
 					onChange={handlechangeFechaNacimiento}
 					value={fechaNacimiento}
 					type="date"
-					sx={{ borderRadius: '15px', minWidth: '16rem' }}
+					sx={{ borderRadius: '15px', margin: '0 30%' }}
 					variant="soft"
 					required
 				/>
 			</div>
 			<div className="navegacion">
-				<Link to="/">
-					<button onClick={mantenerDatos} className="button-navegacion">
-						{'<<Atrás'}
-					</button>
+				<Link to="/" className="button-navegacion">
+					<div onClick={mantenerDatos}>{'Atrás'}</div>
 				</Link>
 
 				{nombre == '' ||
@@ -133,7 +132,7 @@ export default function Registro() {
 				correoSena == '' ||
 				fechaNacimiento == '' ? (
 					<button onClick={mantenerDatos} className="button-navegacion">
-						{'Siguiente>>'}
+						{'Siguiente'}
 					</button>
 				) : (
 					<Link to="/registro/2">
