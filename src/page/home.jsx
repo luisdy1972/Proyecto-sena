@@ -18,7 +18,9 @@ const Home = () => {
 			<Link to="/registro/1">
 				<button onClick={pedirDatosBackend}>Regístrate</button>
 			</Link>
-			<button>Inicia Sesión</button>
+			<Link to="/Login">
+				<button>Inicia Sesión</button>
+			</Link>
 		</div>
 	)
 }
