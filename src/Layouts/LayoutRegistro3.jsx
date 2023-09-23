@@ -15,18 +15,18 @@ export default function () {
 				<div className="formulario">
 					<Outlet></Outlet>
 				</div>
-				<div className="caja-azul2">
-					<img
-						className="img-bienestar"
-						src="/img/logoblancosena.png"
-						alt="Logo-bienestar"
-					/>
-					<img
-						className="img-bienestar"
-						src="/img/logo.png"
-						alt="Logo-bienestar"
-					/>
-				</div>
+			</div>
+			<div className="caja-azul2">
+				<img
+					className="img-bienestar"
+					src="/img/logoblancosena.png"
+					alt="Logo-bienestar"
+				/>
+				<img
+					className="img-bienestar"
+					src="/img/logo.png"
+					alt="Logo-bienestar"
+				/>
 			</div>
 		</form>
 	)

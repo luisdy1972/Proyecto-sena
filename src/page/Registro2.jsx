@@ -44,9 +44,6 @@ export default function Registro2() {
 	function handleChangeDireccion(event) {
 		setDireccion(event.target.value)
 	}
-	// function handleChangeBarrio(event) {
-	// 	setBarrio(event.target.value)
-	// }
 
 	const listRoles = roles.map((rol) => (
 		<Option key={rol._id} value={rol._id}>
@@ -56,10 +53,10 @@ export default function Registro2() {
 
 	function compararContraseña() {
 		if (contrasena != '' && contrasena2 != '' && contrasena == contrasena2) {
-			console.log('sonIguales')
+			console.log('las contraseñas sonIguales')
 			contrasIguales = true
 		} else {
-			console.log('NO IGUAL')
+			console.log('Contraseña no es igual')
 
 			contrasIguales = false
 		}
@@ -75,7 +72,6 @@ export default function Registro2() {
 	}
 
 	useEffect(() => {
-		console.clear()
 		compararContraseña()
 		guardarDatos()
 	}, [rol, contrasena, contrasena2, ficha, telefono, direccion])
@@ -105,7 +101,6 @@ export default function Registro2() {
 				required
 			/>
 			<Input
-				// value={contrasena2}
 				onChange={handleChangeContrasena2}
 				type="password"
 				placeholder="Confirmar Contraseña*"
@@ -116,7 +111,9 @@ export default function Registro2() {
 			/>
 			<Autocomplete
 				onInputChange={handleChangeFicha}
+				isOptionEqualToValue={() => true}
 				options={fichas}
+				defaultChecked={ficha}
 				getOptionLabel={(fichas) => fichas.codigo}
 				placeholder="Número de ficha*"
 				variant="soft"
