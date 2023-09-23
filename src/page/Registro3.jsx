@@ -45,14 +45,14 @@ export default function Registro3() {
 				<Option value="">Eps*</Option>
 				<Option value="...">...</Option>
 			</Select>
-			<div>
+			<div className="caja-politicas">
 				<Checkbox variant="soft" />
 				<text> Acepto las politicas de privacidad y seguridad</text>
 			</div>
 			<Button sx={{ borderRadius: '15px', margin: '0 30%' }}>Registrar</Button>
-			<Link to="/registro/2">
-				<div className="">{'Atrás'}</div>
-			</Link>
+			<div className="boton-atras-registro3">
+				<Link to="/registro/2">Atrás</Link>
+			</div>
 		</>
 	)
 }

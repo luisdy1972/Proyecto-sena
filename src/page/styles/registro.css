@@ -3,6 +3,12 @@ h2 {
   text-align: center;
 }
 
+.principal {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .caja-azul {
   display: flex;
   background-color: #004AAD;
@@ -10,21 +16,15 @@ h2 {
 }
 
 .caja-azul2 {
-  min-height: 30%;
   position: fixed;
   display: flex;
+  padding: 2rem 0rem;
+  justify-content: center;
   bottom: 0;
-  left: 0;
+  right: 0;
   border-radius: 100px 100px 0px 0px;
   background-color: #004AAD;
-  min-width: 50%;
-}
-
-.caja-blanca2 {
-  margin-top: 5rem;
   width: 50%;
-  background-color: #FFF;
-  border-radius: 0px 400px 0px 400px;
 }
 
 .caja-blanca {
@@ -33,11 +33,11 @@ h2 {
   border-radius: 0px 400px 0px 400px;
 }
 
-.img-registro {
+.caja-blanca2 {
+  margin-top: 5rem;
   width: 50%;
-  object-fit: cover;
-
 }
+
 
 .formulario {
   display: flex;
@@ -48,6 +48,22 @@ h2 {
 .navegacion {
   display: flex;
   justify-content: space-around;
+}
+
+.caja-politicas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-registro {
+  width: 50%;
+  object-fit: cover;
+
+}
+
+.img-bienestar {
+  height: 6rem;
 }
 
 .button-navegacion {
@@ -67,34 +83,8 @@ h2 {
   background-color: white;
 }
 
-.principal {
-  display: flex;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
-.Botonregistrar {
-  background-color: #004AAD;
-  color: white;
-  border: none;
-  padding: 10px 50px;
-  font-size: 16px;
-  border-radius: 16px;
-  cursor: pointer;
-  margin: 2rem;
-  font-weight: bold;
-}
-
-.Botonregistrar:hover {
-  background-color: #00f6fa;
-}
-
-.Botonregistrar:active {
-  background-color: #004AAD;
-}
-
-.img-bienestar {
-  width: 11rem;
+.boton-atras-registro3 {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
