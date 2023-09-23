@@ -105,6 +105,7 @@ export default function Registro() {
 				placeholder="Correo Personal"
 				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
+				required
 			/>
 			<div style={{ display: 'block' }}>
 				<div style={{ textAlign: 'center' }}>Fecha de nacimiento*</div>

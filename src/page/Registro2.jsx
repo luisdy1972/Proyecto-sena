@@ -11,31 +11,35 @@ import { datosRegistro } from '../consultas/Datos'
 
 export default function Registro2() {
 	const roles = JSON.parse(localStorage.getItem('roles'))
-	const fichas = JSON.parse(localStorage.getItem('fichas'))
+	let fichas = JSON.parse(localStorage.getItem('fichas'))
 
 	const [rol, setRol] = useState(datosRegistro.rol)
 	const [contrasena, setContrasena] = useState(datosRegistro.contrasena)
 	const [contrasena2, setContrasena2] = useState('')
+	let contrasIguales
 	const [ficha, setFicha] = useState(datosRegistro.ficha)
 	const [telefono, setTelefono] = useState(datosRegistro.telefono)
 	const [direccion, setDireccion] = useState(datosRegistro.direccion)
-
-	let contrasIguales
-
 	function handleChangeRol(event, newValue) {
 		setRol(newValue)
 		console.log(newValue)
 	}
 	function handleChangeContrasena(event) {
+		console.log(event.target.value)
 		setContrasena(event.target.value)
 	}
 	function handleChangeContrasena2(event) {
 		setContrasena2(event.target.value)
 	}
 
+	function guardarIdficha(codigo) {
+		const fichaElegida = fichas.find((e) => e.codigo === codigo)
+		setFicha(fichaElegida._id)
+		console.log(fichaElegida)
+	}
+
 	function handleChangeFicha(event, newValue) {
-		setFicha(newValue)
-		console.log(newValue)
+		guardarIdficha(newValue)
 	}
 
 	function handleChangeTelefono(event) {
@@ -53,10 +57,10 @@ export default function Registro2() {
 
 	function compararContraseña() {
 		if (contrasena != '' && contrasena2 != '' && contrasena == contrasena2) {
-			console.log('las contraseñas sonIguales')
+			// console.log('las contraseñas sonIguales')
 			contrasIguales = true
 		} else {
-			console.log('Contraseña no es igual')
+			// console.log('Contraseña no es igual')
 
 			contrasIguales = false
 		}
@@ -68,7 +72,6 @@ export default function Registro2() {
 		datosRegistro.ficha = ficha
 		datosRegistro.telefono = telefono
 		datosRegistro.direccion = direccion
-		// console.log(datosRegistro)
 	}
 
 	useEffect(() => {

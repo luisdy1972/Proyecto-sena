@@ -1,6 +1,7 @@
 let datosRegistro = {
 	nombres: '',
 	apellidos: '',
+	contrasena: '',
 	tipo_doc: '',
 	n_doc: '',
 	telefono: '',
@@ -14,7 +15,7 @@ let datosRegistro = {
 	genero: '',
 	eps: '',
 	pps: false,
-	activacion: true,
+	activacion: false
 }
 
 export { datosRegistro }

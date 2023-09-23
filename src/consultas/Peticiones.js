@@ -5,10 +5,10 @@ function buscarPorRuta(endPoin = String, saveLocalStorage = String) {
 		.get(`https://proyecto-backend-sgbienestar.onrender.com${endPoin}`)
 		.then(function (response) {
 			localStorage.setItem(saveLocalStorage, JSON.stringify(response.data))
-			console.log(
-				endPoin + ':',
-				JSON.parse(localStorage.getItem(saveLocalStorage))
-			)
+			// console.log(
+			// 	endPoin + ':',
+			// 	JSON.parse(localStorage.getItem(saveLocalStorage))
+			// )
 		})
 		.catch(function (error) {
 			console.log(error)
@@ -21,9 +21,11 @@ function registrarUsuario(datos) {
 		.post(`https://proyecto-backend-sgbienestar.onrender.com/registro`, datos)
 		.then(function (response) {
 			console.log(response)
+			alert('Usuario registrado', response.data.message)
 		})
 		.catch(function (error) {
 			console.log(error)
+			alert('Algo salió mal', error.message)
 		})
 }
 

@@ -15,6 +15,7 @@ export default function Registro3() {
 	function handelChangeCheck(e) {
 		setPoliticas(e.target.checked)
 		alert('Politicas de Pivacidad')
+		console.log(datosRegistro)
 	}
 
 	function guardarDatos() {
