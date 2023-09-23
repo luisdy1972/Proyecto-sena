@@ -51,9 +51,7 @@ h2 {
 }
 
 .caja-politicas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .img-registro {
@@ -71,7 +69,7 @@ h2 {
   color: white;
   font-weight: 700;
   min-width: none;
-  border: 0;
+  border: 1px solid white;
   border-radius: 30px;
   margin: 10px;
   padding: 0.4rem;

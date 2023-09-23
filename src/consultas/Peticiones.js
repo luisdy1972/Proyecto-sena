@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-async function buscarPorRuta(endPoin = String, saveLocalStorage = String) {
+function buscarPorRuta(endPoin = String, saveLocalStorage = String) {
 	axios
 		.get(`https://proyecto-backend-sgbienestar.onrender.com${endPoin}`)
 		.then(function (response) {
@@ -16,4 +16,15 @@ async function buscarPorRuta(endPoin = String, saveLocalStorage = String) {
 		.finally(() => {})
 }
 
-export { buscarPorRuta }
+function registrarUsuario(datos) {
+	axios
+		.post(`https://proyecto-backend-sgbienestar.onrender.com/registro`, datos)
+		.then(function (response) {
+			console.log(response)
+		})
+		.catch(function (error) {
+			console.log(error)
+		})
+}
+
+export { buscarPorRuta, registrarUsuario }

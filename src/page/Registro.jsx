@@ -27,17 +27,14 @@ export default function Registro() {
 
 	function handleChangeNumeroDoc(e) {
 		setDocumento(e.target.value)
-		// console.log(documento)
 	}
 
 	function handleChangeCorreoSena(e) {
 		setCorreoSena(e.target.value)
-		// console.log(correoSena)
 	}
 
 	function handleChangeCorreo(e) {
 		setCorreo(e.target.value)
-		// console.log(correo)
 	}
 
 	function handlechangeFechaNacimiento(e) {
@@ -83,8 +80,8 @@ export default function Registro() {
 			>
 				<Option value="">Tipo de documento*</Option>
 				<Option value="T.I">Ti</Option>
-				<Option value="Cc">Cc</Option>
-				<Option value="Pa">Pa</Option>
+				<Option value="C.c">Cc</Option>
+				<Option value="P.a">Pa</Option>
 			</Select>
 			<Input
 				value={documento}
