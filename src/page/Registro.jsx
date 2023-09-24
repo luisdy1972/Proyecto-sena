@@ -81,6 +81,7 @@ export default function Registro() {
 				<Option value="">Tipo de documento*</Option>
 				<Option value="T.I">Ti</Option>
 				<Option value="C.c">Cc</Option>
+				<Option value="C.e">Ce</Option>
 				<Option value="P.a">Pa</Option>
 			</Select>
 			<Input
@@ -102,7 +103,7 @@ export default function Registro() {
 			<Input
 				value={correo}
 				onChange={handleChangeCorreo}
-				placeholder="Correo Personal"
+				placeholder="Correo Personal*"
 				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required

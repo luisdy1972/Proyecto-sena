@@ -5,21 +5,37 @@ import { Link } from 'react-router-dom'
 // Joy ui
 import { Input, Option, Select, Autocomplete } from '@mui/joy'
 
-import VisibilityIcon from '@mui/icons-material/Visibility' // iconos
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 
 import { datosRegistro } from '../consultas/Datos'
 
 export default function Registro2() {
 	const roles = JSON.parse(localStorage.getItem('roles'))
-	let fichas = JSON.parse(localStorage.getItem('fichas'))
-
+	const fichas = JSON.parse(localStorage.getItem('fichas'))
 	const [rol, setRol] = useState(datosRegistro.rol)
 	const [contrasena, setContrasena] = useState(datosRegistro.contrasena)
 	const [contrasena2, setContrasena2] = useState('')
-	let contrasIguales
 	const [ficha, setFicha] = useState(datosRegistro.ficha)
 	const [telefono, setTelefono] = useState(datosRegistro.telefono)
 	const [direccion, setDireccion] = useState(datosRegistro.direccion)
+	let contrasIguales
+
+	const ojoAbierto = <VisibilityIcon onClick={cambiarAText} />
+	const ojoCerrado = <VisibilityOffIcon onClick={cambiarAPass} />
+
+	const [typeInput, setTypeInput] = useState('password')
+	const [iconoPass, setIconPass] = useState(ojoAbierto)
+
+	function cambiarAText() {
+		setTypeInput('text')
+		setIconPass(ojoCerrado)
+	}
+	function cambiarAPass() {
+		setTypeInput('password')
+		setIconPass(ojoAbierto)
+	}
+
 	function handleChangeRol(event, newValue) {
 		setRol(newValue)
 		console.log(newValue)
@@ -96,18 +112,18 @@ export default function Registro2() {
 
 			<Input
 				onChange={handleChangeContrasena}
-				type="password"
+				type={typeInput}
 				placeholder="Contraseña*"
-				endDecorator={<VisibilityIcon />}
+				endDecorator={iconoPass}
 				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required
 			/>
 			<Input
 				onChange={handleChangeContrasena2}
-				type="password"
+				type={typeInput}
 				placeholder="Confirmar Contraseña*"
-				endDecorator={<VisibilityIcon />}
+				endDecorator={iconoPass}
 				sx={{ borderRadius: '15px', margin: '0 30%' }}
 				variant="soft"
 				required

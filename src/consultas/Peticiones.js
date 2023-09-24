@@ -21,11 +21,11 @@ function registrarUsuario(datos) {
 		.post(`https://proyecto-backend-sgbienestar.onrender.com/registro`, datos)
 		.then(function (response) {
 			console.log(response)
-			alert('Usuario registrado', response.data.message)
+			alert(response.data.message)
 		})
 		.catch(function (error) {
 			console.log(error)
-			alert('Algo salió mal', error.message)
+			alert(error.message)
 		})
 }
 
